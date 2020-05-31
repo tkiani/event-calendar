@@ -1,0 +1,369 @@
+
+.body {
+  font-family: "Lato", sans-serif;
+}
+
+.heading1 {
+  width: auto;
+  text-align: center;
+  font-size:35px;
+  height: 115px;
+  background: gray;
+  padding: 30px;
+  color: #eee;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  text-decoration: double;
+}
+
+.sidenav {
+  margin-top: auto;
+  padding-left: 0px;  
+  width: 190px;
+  height: 620px;
+  position: absolute;
+  z-index: 1;
+  background: #eee;
+  padding: 8px 0;
+  text-align: center;
+  color: dimgrey;
+}
+
+#login1{
+  font-size: 20px;
+    font-weight: 9px;
+    font-family: sans-serif;
+   font-weight: bold;
+   color: dimgrey;
+}
+
+#username, #password, #newusername, #newpassword{
+  width:97%;
+}
+
+#register1{
+    font-size: 20px;
+    font-weight: 9px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: dimgrey;
+}
+
+.loggedin_nav {
+  margin-top: auto;
+  padding-left: 0px;  
+  width: 190px;
+  height: auto;
+  position: absolute;
+  z-index: 1;
+  background: #eee;
+  padding: 8px 0;
+  text-align: center;
+  color: dimgrey;
+}
+
+.editEventNavigation {
+  margin-top: auto;
+  padding-left: 0px;  
+  width: 190px;
+  height: auto;
+  position: absolute;
+  z-index: 1;
+  background: #eee;
+  padding: 8px 0;
+  text-align: center;
+  color: dimgrey;
+}
+
+.deleteEventNavigation{
+  margin-top: auto;
+  padding-left: 0px;  
+  width: 190px;
+  height: auto;
+  position: absolute;
+  z-index: 1;
+  background: #eee;
+  padding: 8px 0;
+  text-align: center;
+  color: dimgrey;
+}
+
+
+
+ 
+.select_btn{
+  background: #eee;
+  margin-top: auto;
+  padding-left: 5px;  
+  padding-top: 5px;
+  height: auto;
+  position: relative;
+  z-index: 1;
+  width: 190px;
+}
+
+#editevent,#shareevent{
+  width: 97%;
+}
+
+#event,#selectEventColor{
+  font-size: 20px;
+    font-weight: 9px;
+    font-family: sans-serif;
+   font-weight: bold;
+   color: dimgrey;
+}
+
+#selectEventPriority{
+  font-size: 18px;
+  font-weight: 9px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: dimgrey;
+}
+
+#editeventid{
+  width: 97%;
+}
+
+#eventdetails{
+  width: 97%;
+}
+
+#event_date {
+  width: 97%;
+}
+
+.selectEventPriority{
+font-size: medium;
+font-weight: bold;
+}
+
+
+.calendar-main{
+    margin-left: 190px;
+    width: auto;
+    height: 1000px;
+}
+
+.calendar{
+  background-color: white;
+  border: 2px solid gray;
+}
+
+.buttons{
+height: auto;
+padding-top: 5px;
+padding-left: 5px;
+}
+
+#prev_month_btn{
+float: left;
+}
+
+#next_month_btn{
+float: right;
+margin-right: 5px;
+}
+
+#editevent{
+font-size: 20px;
+  font-weight: 9px;
+  font-family: sans-serif;
+ font-weight: bold;
+ color: dimgrey;
+}
+
+#edit-eventdate{
+width: 97%;
+}
+
+#editevent,edit-eventdetails{
+width: 97%;
+}
+
+#deleteeventID,#edit-eventdetails{
+width: 97%;
+}
+
+.header{
+height: auto;
+}
+
+.header-title{
+text-transform: uppercase;
+background-color: #eee;
+text-align: center;
+font-size: 25px;
+font-weight: bold;
+font-family: 'Times New Roman', Times, serif;
+color: dimgrey;
+border-bottom: 2px solid gray;
+}
+
+.day-title-wrap{
+width: 100%;
+display: table;
+table-layout: fixed;
+border-top: 2px solid gray;
+border-bottom: 2px solid gray;
+background-color: #eee;
+}
+
+.day-title-wrap div{
+width: auto;
+display: table-cell;
+position: relative;
+font-weight: bold;
+color: dimgray;
+text-align: center;
+box-sizing: border-box;
+}
+
+/*Day blocks*/
+
+.day:before {
+content: "";
+display: block;
+padding-top: 100%;
+float: left;
+}
+
+.day-wrap {
+display:table;
+table-layout:fixed;
+width:100%;
+overflow: hidden;
+}
+.week {
+display:table-row;
+width:100%;
+}
+
+.day, .day-blank {
+width: 14.28%!important;
+display:table-cell;
+vertical-align: top;
+box-sizing:border-box;
+position: relative;
+font-weight: bold;
+color:inherit;
+background: #fff;
+box-shadow: 0 0 0 1px #EBEBEB;
+-webkit-transition: .25s;
+transition:.25s;
+text-decoration: none;
+}
+
+.day-blank {
+background:#F3F3F5;
+}
+
+.day-number {
+color: #585858;
+position: relative;
+line-height: 20px;
+margin: 3px;
+font-size:11px;
+}
+
+.indicator-wrap{
+display: none;
+}
+
+/*Today*/
+
+.today .day-number {
+color: yellow;
+background: blue;
+width: auto;
+height: auto;
+}
+
+/*Day numbers*/
+
+@media (min-width: 400px) {
+.day-number {
+  font-size: 15px;
+
+}
+}
+
+
+/*events*/
+
+
+/*Events*/
+
+@media (min-width: 600px) {
+.indicator-wrap{
+  display: block;
+  border: none;
+  position: relative;
+  margin: 1px;
+  text-align: center;
+  line-height: normal;
+  top: 2px;
+  bottom: 2px;
+  font-size: 13px;
+  border-radius:0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color:black;
+  white-space: nowrap;
+  box-sizing: border-box;
+  width: 100%;
+  height:auto;
+}
+
+.eventID,.eventTime{
+  color: white;
+  font-size: 10px;
+}
+
+.indicator-wrap:hover {
+  color: #eeeeee;
+}
+}
+
+.AddEvent{
+position: absolute;
+top:260px;
+right:16px;
+margin: auto;
+}
+
+.AfterLogIn{
+position: absolute;
+top:2px;
+right:16px;
+margin: auto;
+}
+
+.Login{
+position: absolute;
+top:2px;
+right:16px;
+margin: auto;
+}
+
+.Category{
+position: absolute;
+top:100px;
+right:16px;
+margin: auto;
+}
+
+@media (max-width: 1000px) {
+.AddEvent{
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.Category{
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
+}
+}

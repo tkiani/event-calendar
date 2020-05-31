@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Event Calendar</title>
+    <link rel="stylesheet" href="calendar.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+      integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+  </head>
+
+<body>
+
+
+    <div class="heading1">
+        <h2>Event Calendar</h2>
+      </div>
+      
+
+ <!--Login and Register side nav-->
+<div class="sidenav">
+    <label for="Login" id="login1">Login</label><br>
+    <label for="username">Username</label><br>
+    <input type="text" name="username" id="username"><br>
+    <label for="">Password</label><br>
+    <input type="password" name="password" id="password"><br><br>
+    <input type="button" class="btn btn-secondary btn-sm" id="login_btn" value="Login">
+    <br><br>
+    <label for="register" id="register1">Register</label><br>
+    <label for="register">Username</label><br>
+    <input type="text" name="newusername" id="newusername"><br>
+    <label for="">Password</label><br>
+    <input type="password" name="newpassword" id="newpassword"><br><br>
+    <input type="button" class="btn btn-secondary btn-sm" id="register_btn" value="Register">
+</div>
+  
+<!--Add/Edit/Delete Buttons-->
+<div class = select_btn>
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-secondary" id="addButtonActive">Add</button>
+    <button type="button" class="btn btn-secondary" id="editButtonActive">Edit</button>
+    <button type="button" class="btn btn-secondary" id="deleteButtonActive">Delete</button>
+  </div>
+ </div>  
+
+<!-- logged in navaigation bar -->
+<div class="loggedin_nav">
+    <label for="event" id="event">Add New Events </label><br>
+    <label for="newevent">New Event</label><br>
+    <input type="text" name="newevent" id="eventdetails"><br><br>
+    <label for="date-time">Select Date and Time</label><br>
+    <input type="datetime-local" id="event_date" /> <br><br>
+    <label for="newevent">Share Event With Other Users</label><br>
+    <input type="text" name="shareevent" id="shareevent" value="none"><br><br>
+
+    <div class="event_color">
+      <label for="selectColor" id="selectEventColor">Select Event Color</label><br>
+      <input type="radio" name="selectColor" value="red" id="red" checked>
+      <label for="Red">Red</label>
+      <br>
+      <input type="radio" name="selectColor" value="yellow" id="yellow">
+      <label for="Yellow">Yellow</label>
+      <br>
+       <input type="radio" name="selectColor" value="green" id="green">
+       <label for="Green">Green</label>
+       <br>
+        </div>
+<br>
+        <div class="priority">
+          <label for="selectPriority" id="selectEventPriority">Select Event Priority</label><br>
+          <input type="radio" name="priority" value="low" id="low" checked>
+          <label for="Low">Low</label>
+          <br>
+          <input type="radio" name="priority" value="moderate" id="moderate">
+          <label for="mODERA">Moderate</label>
+          <br>
+           <input type="radio" name="priority" value="high" id="high">
+           <label for="Green">High</label>
+           <br>
+        </div>
+      
+<br>
+
+<button type="create_event_btn" class="btn btn-secondary btn-sm" id="addevent_btn">Create Event</button>
+<br><br>
+
+<label for="selectEventPriority" class="selectEventPriority">Select Event Priority To Display:</label>
+
+<input type="radio" name="displayPriority" value="low"  id="lowDisplay"  onclick="updateCalendar()">
+<label for="lowDisplay">Low</label>
+<br>
+<input type="radio" name="displayPriority" value="moderate" id="moderateDisplay" onclick="updateCalendar()" checked>
+<label for="moderateDisplay">Moderate</label>
+<br>
+ <input type="radio" name="displayPriority" value="high" id="highDisplay" onclick="updateCalendar()">
+ <label for="highDispay">High</label>
+ <br>
+
+  <button type="button" class="btn btn-secondary btn-sm" id="logout_btn">Logout</button>
+</div>
+ 
+
+  <!--EDIT NAVIGATION-->
+  <div class="editEventNavigation">
+
+      <label for="event" id="event">Edit Events </label><br>
+      <label for="editeventID">Please enter Event ID to Edit:</label><br>
+      <input type="text" name="editevent" id="editeventid"><br><br>
+      <label for="newevent">New Event</label><br>
+      <input type="text" name="newevent" id="edit-eventdetails"><br><br>
+      <label for="date-time">Select Date and Time</label><br>
+      <input type="datetime-local" id="edit-eventdate" /> <br><br>
+  
+      <div class="event_color">
+        <label id="selectEventColor">Select Event Color</label><br>
+        <input type="radio" name="event_color" value="red"  id="redEdit" checked>
+        <label for="Red">Red</label>
+        <br>
+        <input type="radio" name="event_color" value="yellow" id="yellowEdit">
+        <label for="Yellow">Yellow</label>
+        <br>
+         <input type="radio" name="event_color" value="green" id="greenEdit">
+         <label for="Green">Green</label>
+         <br>
+          </div>
+  <br>
+        <div class="priority">
+          <label  id="selectEventPriority">Select Event Priority</label><br>
+          <input type="radio" name="priority" value="low" checked id="lowEdit">
+          <label for="low">Low</label>
+          <br>
+          <input type="radio" name="priority" value="moderate" id="moderateEdit">
+          <label for="moderate">Moderate</label>
+          <br>
+           <input type="radio" name="priority" value="high" id="highEdit">
+           <label for="high">High</label>
+           <br>
+        </div>
+  <br>
+  
+  <button type="edit_event_btn" class="btn btn-secondary btn-sm" id="edit_event_btn">Edit Event</button>
+  <br><br>
+  
+    <button type="button" class="btn btn-secondary btn-sm" id="edit-logout_btn">Logout</button>
+   </div>
+
+
+
+<!--Delete NAVIGATION-->
+<div class="deleteEventNavigation">
+    
+  <label for="event" id="event">Delete Events </label><br>
+  <label for="editeventID">Please enter Event ID to Delete:</label><br>
+  <input type="text" name="editevent" id="deleteeventID"><br><br>
+ 
+<button type="delete_event_btn" class="btn btn-secondary btn-sm" id="delete_event_btn">Delete Event</button>
+<br><br>
+
+<button type="button" class="btn btn-secondary btn-sm" id="delete-logout_btn">Logout</button>
+</div>
+
+<script>
+    $(".sidenav").show();
+  $(".loggedin_nav").hide();
+  $(".deleteEventNavigation").hide();
+  $(".editEventNavigation").hide();  
+  $(".select_btn").hide();  
+  
+</script>
+
+
+<!-- Determine which Button ADD/DELETE/EDIT IS PRESSED-->
+<script>
+document.getElementById("addButtonActive").addEventListener("click", function(event){
+  $(".loggedin_nav").show();
+  $(".editEventNavigation").hide();
+  $(".deleteEventNavigation").hide();
+},false);
+
+document.getElementById("editButtonActive").addEventListener("click", function(event){
+  $(".loggedin_nav").hide();
+  $(".editEventNavigation").show();
+  $(".deleteEventNavigation").hide();
+},false);
+
+document.getElementById("deleteButtonActive").addEventListener("click", function(event){
+  $(".loggedin_nav").hide();
+  $(".editEventNavigation").hide();
+  $(".deleteEventNavigation").show();
+},false);
+
+</script> 
+
+
+<div class="calendar-main">
+    
+        <div class="calendar" id="calendar">
+
+            <div class="header">
+                <div class="header-title">
+                    <div class="header-title-date" id="header-title-date">MM YYYY</a></div>
+                </div>
+
+                <div class="buttons">
+                <button type="button" class="btn btn-secondary btn-sm" id = "prev_month_btn">Previous Month</button>
+                <button type="button" class="btn btn-secondary btn-sm" id = "next_month_btn">Next Month</button>
+                </div>
+
+            </div> 
+
+<script>
+// Change the month when the "next" button is pressed
+document.getElementById("next_month_btn").addEventListener("click", function(event){
+	currMonth = currMonth.nextMonth(); // Previous month would be currentMonth.prevMonth()
+  updateCalendar(); // Whenever the month is updated, we'll need to re-render the calendar in HTML
+}, false);
+
+// Change the month when the "next" button is pressed
+document.getElementById("prev_month_btn").addEventListener("click", function(event){
+	currMonth = currMonth.prevMonth(); // Previous month would be currentMonth.prevMonth()
+  updateCalendar(); // Whenever the month is updated, we'll need to re-render the calendar in HTML
+}, false);
+
+
+</script>
+
+            <div class="day-title-wrap">
+                <div>SUN</div>
+                <div>MON</div>
+                <div>TUE</div>
+                <div>WED</div>
+                <div>THU</div>
+                <div>FRI</div>
+                <div>SAT</div>
+            </div>
+
+            <div class="day-wrap" id="day-wrap"> </div>
+            
+        </div>
+
+</div>
+
+  
+  <!-- Optional JavaScript for bootstrap -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+          integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+          crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+          integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+          crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script type="text/javascript" src="login.js"></script>
+<script type="text/javascript" src="logout.js"></script>
+<script type="text/javascript" src="register.js"></script>
+<script type="text/javascript" src="addevent.js"></script>
+<script type="text/javascript" src="editevent.js"></script>
+<script type="text/javascript" src="deleteevent.js"></script>
+<script type="text/javascript" src="calendar.js"></script>
+
+</body>
+</html>
+
