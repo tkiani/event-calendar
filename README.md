@@ -1,4 +1,4 @@
-# CSE330 Event-Calendar
+# Event-Calendar
 
 A project made for CSE330-CREATIVE PROGRAMMING AND RAPID PROTYPING. Functionality:  
 
